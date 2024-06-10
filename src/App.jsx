@@ -11,6 +11,7 @@ import Login from "./Pages/Admin/Login";
 import AdminProfile from "./Pages/Admin/AdminProfile";
 import ViewProjects from "./Pages/Admin/ViewProjects";
 import Message from "./Pages/Admin/Message";
+import PageNotFound from './Pages/PageNotFound';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/admin" element={<AdminProfile/>}></Route>
         <Route path="/view/projects" element={<ViewProjects/>}></Route>
         <Route path="/message" element={<Message/>}></Route>
+        <Route path="*" element={<PageNotFound/>}></Route>
       </Routes>
     </BrowserRouter>
     </>
