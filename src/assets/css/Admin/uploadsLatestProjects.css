@@ -1,0 +1,60 @@
+.UploadLatestProduct{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-color: rgb(2, 4, 27) ;
+}
+
+.LatestProduct{
+    max-width: 1400px;
+    margin: 0 auto;
+    height: auto;
+    min-height: 100vh;
+    padding-top: 10rem;
+}
+
+
+.LatestProduct form{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    /* align-items: center; */
+    justify-content:center;
+    width: 45rem;
+    padding: 4rem;
+    border-radius: 1rem;
+}
+
+
+.LatestProduct form input{
+    font-size: 1.6rem;
+    /* height: 3.4rem; */
+    padding: 0.3rem 0.9rem;
+    margin: 1rem 0;
+}
+
+.LatestProduct form input::placeholder{
+    text-transform: capitalize;
+}
+
+.LatestProduct form textarea{
+    resize: none;
+    height: 10rem;
+    padding: 0.4rem 1rem;
+    font-size: 1.6rem;
+}
+
+.LatestProduct form textarea::placeholder{
+    text-transform: capitalize;
+}
+
+.LatestProduct form button{
+    padding: 0.6rem 1rem;
+    border: 0.15rem solid rgb(34, 73, 213);
+    background-color: white;
+    text-transform: uppercase;
+    font-size:1.5rem;
+    letter-spacing: 0.3rem;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 .Service{
     width: 100%;
     height:auto;
+    min-height: 100vh;
     background: linear-gradient(to bottom , #010921b5, #000000ca), url(../images/service.jpg);
     background-repeat: no-repeat;
     background-size: cover;

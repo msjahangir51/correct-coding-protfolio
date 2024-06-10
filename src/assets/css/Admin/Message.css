@@ -1,0 +1,45 @@
+.Message{
+    width: 100%;
+    height: auto;
+    background-color: rgb(2, 4, 27) ;
+    min-height: 100vh;
+}
+.message .views{
+    width: 60vw;
+}
+.message .view {
+    align-items: start;
+}
+.message .view .docs{
+    margin-left: 1rem;
+    width: 72%;
+    height: fit-content;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+
+.message .view .docs p{
+    text-align: justify;
+}
+@media screen and (max-width:900px) {
+    .message .view{
+        flex-direction: column;
+        align-items: center;
+    }
+    .message .view .docs{
+        width: 100%;
+        text-align: center;
+    }
+
+    .message .view .image{
+        width: 9rem;
+    }
+}
+
+@media screen and (max-width:660px) {
+    .message .views{
+        width: 90%;
+    }
+}
+

@@ -8,8 +8,14 @@ import ServiceBody from '../Component/ServiceBody';
 import SkillsBody from '../Component/SkillsBody';
 import ProtfolioBody from './../Component/ProtfolioBody';
 import Footer from '../Component/Footer';
-
+import Lottie from "lottie-react";
+import ScrollDown from "../../public/ScrollDown.json"
 function Model() {
+  const handleHashRemove= ()=>{
+    setTimeout(()=>{
+      history.replaceState("", document.title,window.location.origin +  window.location.pathname +  window.location.search)
+    },5)
+  }
   return(
   <>
         <Navbar2/>
@@ -18,7 +24,9 @@ function Model() {
         <h1>I'm Jahangir Alom</h1>
         <p>FRONT-END DEVELOPER</p>
 
-        <Link to="/contact" className='btn'>Contact us</Link>
+        <a href="#skill" onClick={handleHashRemove}>
+          <Lottie an animationData={ScrollDown}/>
+         </a>
     </div>
 
     <SkillsBody/>
