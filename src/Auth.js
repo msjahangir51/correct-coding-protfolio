@@ -10,7 +10,7 @@ export const Auth =()=>{
             Authorization: token
           }
         }).catch((err)=>{
-          navigate("/login")
+          navigate("/")
         })
       }, [])
 }

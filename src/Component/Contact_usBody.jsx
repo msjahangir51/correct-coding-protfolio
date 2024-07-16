@@ -5,14 +5,25 @@ import axios from 'axios';
 import SMS_send from './SMS_send';
 
 
+
+
 function Contact_usBody() {
-    let [SUCCESS, SetSUCCESS] = useState(false) 
+  const [loading,setLoading] = useState(false)
+
+  let [SUCCESS, SetSUCCESS] = useState(false) 
     const [name, SetName] = useState("") 
     const [email, SetEmail] = useState("") 
     const [message, SetMessage] = useState("") 
+    const [nameerr, SetNameerr] = useState(false) 
+    const [emailerr, SetEmailerr] = useState(false) 
+    const [messageerr, SetMessageerr] = useState(false) 
 
     const handleSubpit = (e)=>{
       e.preventDefault()
+      if(!name) return SetNameerr(true)
+      if(!email) return SetEmailerr(true)
+      if(!message) return SetMessageerr(true)
+      setLoading(true)
       axios.post("https://correct-coding-protfolio-backend.onrender.com/post/message",{
         name: name,
         email:email,
@@ -22,6 +33,7 @@ function Contact_usBody() {
         SetEmail("")
         SetMessage("")
         SetSUCCESS(true)
+        setLoading(false)
       }).catch((err)=>{
         console.log(err.message)
       })
@@ -33,10 +45,10 @@ function Contact_usBody() {
       
 
       <form>
-        <input type="text" name="user_name" value={name} onChange={(e)=> SetName(e.target.value)} placeholder='Enter Your Name' required/>
-        <input type="email" name="user_email" value={email} onChange={(e)=> SetEmail(e.target.value)} placeholder='Enter Your Email Address' required />
-        <textarea name="message" value={message} onChange={(e)=> SetMessage(e.target.value)} placeholder='Enter Your Message' required/>
-        <input type="submit" onClick={handleSubpit}  className='SubmitBTN' value="Send" />
+        <input type="text" name="user_name" value={name} onChange={(e)=> SetName(e.target.value)} placeholder='Enter Your Name' className={nameerr? "emptyerr" : ""}/>
+        <input type="email" name="user_email" value={email} onChange={(e)=> SetEmail(e.target.value)} placeholder='Enter Your Email Address' className={emailerr? "emptyerr" :""} />
+        <textarea name="message" value={message} onChange={(e)=> SetMessage(e.target.value)} placeholder='Enter Your Message' className={messageerr? "emptyerr" : ""}/>
+        <input type="submit" onClick={!loading?handleSubpit :""}  className='SubmitBTN' value={loading? "loading" : "SEMD"} />
       </form>
 
 

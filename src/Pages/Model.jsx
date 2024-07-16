@@ -21,8 +21,8 @@ function Model() {
         <Navbar2/>
     <div className='Home'>
         <h4>Hello World.</h4>
-        <h1>I'm Jahangir Alom</h1>
-        <p>FRONT-END DEVELOPER</p>
+        <h1>I'M Aayan Ahmed</h1>
+        <p>MERM STACK DEVELOPER</p>
 
         <a href="#skill" onClick={handleHashRemove}>
           <Lottie an animationData={ScrollDown}/>

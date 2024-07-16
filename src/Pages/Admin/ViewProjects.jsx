@@ -3,10 +3,19 @@ import Navigation from './Navigation'
 import "../../assets/css/Admin/ViewProjects.css"
 import { Auth } from '../../Auth'
 import axios from 'axios'
+import { MdDelete } from "react-icons/md";
+
 
 function ViewProjects() {
   const [project,setProject] = useState();
   Auth()
+  const handledelate = (id)=>{
+    axios.delete(`https://correct-coding-protfolio-backend.onrender.com/delete/product/${id}`).then(()=>{
+      location.reload()
+    }).catch(err=>{
+      console.log(err)
+    })
+  }
   useEffect(()=>{
    axios.get("https://correct-coding-protfolio-backend.onrender.com/").then(res=>{
       setProject(res.data)
@@ -33,6 +42,7 @@ function ViewProjects() {
                   <h1>{name}</h1>
                   <p>{desc}</p>
                 </div>
+                <div onClick={()=>handledelate(_id)} className='deletebtn'><MdDelete/></div>
               </div>
             )
           })}

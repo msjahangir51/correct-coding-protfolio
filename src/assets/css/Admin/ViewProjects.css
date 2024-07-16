@@ -26,6 +26,7 @@
     }
     
     .view{
+        position: relative;
         padding: 0.4rem;
         min-height: 6rem;
         height: auto;
@@ -60,6 +61,28 @@
 }
 
 
+.deletebtn{
+    position: absolute;
+    top: -1.6rem;
+    right: 1rem;
+    background-color: rgb(211, 25, 25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 0.9rem;
+    cursor: pointer;
+}
+
+.deletebtn:hover{
+    background-color: rgba(203, 94, 94, 0.817);
+}
+
+
+
+.deletebtn svg{
+    font-size: 2rem;
+}
 @media screen and (max-width:750px) {
     .views{
         width: 60%;
